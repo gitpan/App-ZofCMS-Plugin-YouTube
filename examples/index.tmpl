@@ -1,0 +1,24 @@
+{
+    body => \'admin/videos.tmpl',
+    title => 'Videos - Admin',
+
+    plugins => [
+        { YouTube => 1500 },
+    ],
+
+    plug_youtube => {
+        dsn     => "DBI:mysql:database=test;host=localhost",
+        user    => 'test',
+        pass    => 'test',
+        opt     => { RaiseError => 1, AutoCommit => 1 },
+        table           => 'videos',
+        clean           => 0,
+        create_table    => 0,
+        no_html         => 0,
+        ul_class        => 'youtube_videos',
+        h_level         => 3,
+        size            => [ 200, 165 ],
+        allow_edit      => 1,
+    },
+
+}
