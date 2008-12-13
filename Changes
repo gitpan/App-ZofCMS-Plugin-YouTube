@@ -1,5 +1,8 @@
 Revision history for App-ZofCMS-Plugin-YouTube
 
+0.0103  December 13, 2008
+        Fixed SQL for 'create_table' that magically disappeared
+
 0.0102  December 13, 2008
         Made it so if both 'no_form' and 'no_list' are set the plugin would no process
         anything; this allows us to set DBI settings in main config file.

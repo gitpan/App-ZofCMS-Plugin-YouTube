@@ -1,6 +1,6 @@
 ---
 name: App-ZofCMS-Plugin-YouTube
-version: 0.0102
+version: 0.0103
 author:
   - "Zoffix <'zoffix@cpan.org'>"
 abstract: CRUD-type plugin to manage YouTube videos
@@ -18,7 +18,7 @@ build_requires:
 provides:
   App::ZofCMS::Plugin::YouTube:
     file: lib/App/ZofCMS/Plugin/YouTube.pm
-    version: 0.0102
+    version: 0.0103
 generated_by: Module::Build version 0.2808
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html

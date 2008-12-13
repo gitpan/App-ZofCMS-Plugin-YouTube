@@ -3,7 +3,7 @@ package App::ZofCMS::Plugin::YouTube;
 use warnings;
 use strict;
 
-our $VERSION = '0.0102';
+our $VERSION = '0.0103';
 
 use DBI;
 use HTML::Template;
@@ -67,7 +67,14 @@ sub _do {
         );
 
         $dbh->do(
-
+            "CREATE TABLE $conf->{table} (
+                title       TEXT,
+                link        TEXT,
+                description TEXT,
+                embed       TEXT,
+                time        VARCHAR(10),
+                id          TEXT
+            );",
         );
     }
 
