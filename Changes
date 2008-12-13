@@ -1,5 +1,9 @@
 Revision history for App-ZofCMS-Plugin-YouTube
 
+0.0102  December 13, 2008
+        Made it so if both 'no_form' and 'no_list' are set the plugin would no process
+        anything; this allows us to set DBI settings in main config file.
+
 0.0101  December 10, 2008
         First version, released on an unsuspecting world.
 

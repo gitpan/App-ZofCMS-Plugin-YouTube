@@ -3,7 +3,7 @@ package App::ZofCMS::Plugin::YouTube;
 use warnings;
 use strict;
 
-our $VERSION = '0.0101';
+our $VERSION = '0.0102';
 
 use DBI;
 use HTML::Template;
@@ -41,6 +41,10 @@ sub _defaults {
 
 sub _do {
     my ( $self, $conf, $template, $query ) = @_;
+
+    return if
+        $conf->{no_form}
+        and $conf->{no_list};
 
     if ( not ref $conf->{size} ) {
         my @sizes = (
