@@ -3,7 +3,7 @@ package App::ZofCMS::Plugin::YouTube;
 use warnings;
 use strict;
 
-our $VERSION = '0.0103';
+our $VERSION = '0.0104';
 
 use DBI;
 use HTML::Template;
@@ -340,8 +340,8 @@ sub _list_template {
                     <input type="hidden" name="plug_youtube_vid_edit_id" value="<tmpl_var escape='html' name='id'>">
                     <input type="hidden" name="page" value="<tmpl_var escape='html' name='page'>">
                     <input type="hidden" name="dir" value="<tmpl_var escape='html' name='dir'>">
-                    <input type="submit" class="submit_button_edit" name="plug_youtube_vid_edit_action" value="Edit">
-                    <input type="submit" class="submit_button_delete" name="plug_youtube_vid_edit_action" value="Delete">
+                    <input type="submit" class="input_submit submit_button_edit" name="plug_youtube_vid_edit_action" value="Edit">
+                    <input type="submit" class="input_submit submit_button_delete" name="plug_youtube_vid_edit_action" value="Delete">
                 </div>
                 </form>
             </tmpl_if>
@@ -457,9 +457,21 @@ Without saying it, you need to add the plugin in the list of plugins to execute.
         },
     },
 
+    plug_youtube => sub {
+        my ( $t, $q, $config ) = @_;
+        return {
+            dsn => "DBI:mysql:database=test;host=localhost",
+        }
+    },
+
 The plugin takes its config via C<plug_youtube> first-level key that takes a hashref
-as a value and can be specified in
-either Main Config File or ZofCMS Template or both. If a certain key in that hashref is set
+or a subref as a value and can be specified in
+either Main Config File or ZofCMS Template or both. or a subref as a value. If subref is specified,
+its return value will be assigned to C<plug_youtube> as if it was already there. If sub returns
+an C<undef>, then plugin will stop further processing. The C<@_> of the subref will
+contain (in that order): ZofCMS Tempalate hashref, query parameters hashref and
+L<App::ZofCMS::Config> object.
+If a certain key (does NOT apply to subrefs) in that hashref is set
 in both, Main Config File and ZofCMS Template, the value for that key that is set in
 ZofCMS Template will take precendence. The possible keys/values are as follows (virtually
 all are optional and have default values):
