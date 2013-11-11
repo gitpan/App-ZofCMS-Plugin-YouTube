@@ -1,8 +1,9 @@
 App-ZofCMS-Plugin-YouTube
 
-The module is a plugin for L<App::ZofCMS>. It provides means to have a CRUD-like (Create, Read,
-Update, Delete) interface for managing YouTube videos. The plugin provides a form where a
-user can enter the title of the video, its YouTube URI and a description. That form is stored
+The module is a plugin for L<App::ZofCMS>. It provides means to have a
+CRUD-like (Create, Read, Update, Delete) interface for managing YouTube
+videos. The plugin provides a form where a user can enter the title of
+the video, its YouTube URI and a description. That form is stored
 in a SQL database by the plugin and can be displayed as a list.
 
 

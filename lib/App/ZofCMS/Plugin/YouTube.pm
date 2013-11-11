@@ -3,7 +3,7 @@ package App::ZofCMS::Plugin::YouTube;
 use warnings;
 use strict;
 
-our $VERSION = '0.0104';
+our $VERSION = '0.0105';
 
 use DBI;
 use HTML::Template;
@@ -356,6 +356,8 @@ END_HTML_TEMPLATE_CODE
 
 1;
 __END__
+
+=encoding utf8
 
 =head1 NAME
 
